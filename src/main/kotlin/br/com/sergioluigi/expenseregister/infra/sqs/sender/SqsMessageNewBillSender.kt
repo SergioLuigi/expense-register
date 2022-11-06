@@ -1,6 +1,6 @@
 package br.com.sergioluigi.expenseregister.infra.sqs.sender
 
-import br.com.sergioluigi.expenseregister.infra.sqs.Queues
+import br.com.sergioluigi.expenseregister.infra.sqs.Queues.EXPENSE_REGISTER_NEW_BILL
 import br.com.sergioluigi.expenseregister.infra.sqs.SqsMessageSender
 import br.com.sergioluigi.expenseregister.model.dto.BillDTO
 import io.awspring.cloud.messaging.core.QueueMessagingTemplate
@@ -14,7 +14,7 @@ class SqsMessageNewBillSender(
 
     fun send(@Valid billDTO: BillDTO){
 
-        send(Queues.EXPENSE_REGISTER_NEW_BILL, billDTO)
+        send(EXPENSE_REGISTER_NEW_BILL, billDTO)
     }
 }
 

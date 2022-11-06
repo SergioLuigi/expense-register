@@ -44,4 +44,14 @@ data class ExpenseDTO(
         other.value == this.value &&
         other.tags.size == this.tags.size &&
         other.tags.containsAll(this.tags)
+
+    override fun hashCode(): Int {
+        var result = id?.hashCode() ?: 0
+        result = 31 * result + description.hashCode()
+        result = 31 * result + responsibleName.hashCode()
+        result = 31 * result + value.hashCode()
+        result = 31 * result + tags.hashCode()
+        result = 31 * result + expenseDate.hashCode()
+        return result
+    }
 }

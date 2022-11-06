@@ -13,7 +13,6 @@ import javax.persistence.*
 import javax.persistence.CascadeType.*
 import javax.persistence.FetchType.EAGER
 
-
 @Entity
 @Audited
 @Table(name = "expense")
