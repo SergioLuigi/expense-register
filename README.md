@@ -5,9 +5,9 @@
 Tecnologias utilizadas:
 
 - Kotlin
-- AWS
+- AWS (SQS)
 - Localstack
-- Spring Boot 2.7.5 (WEB, VALIDATION, JPA, SQS, ENVERS, WEBFLUX, TEST)
+- Spring Boot 2.7.5 (WEB, VALIDATION, JPA, CLOUD, ENVERS, WEBFLUX, TEST)
 - Flyway
 - Postgresql
 - Junit 5
