@@ -12,3 +12,17 @@ services:
       - "5432:5432"
     volumes:
       - C:\Projetos\Estudos\Volumes\expenseregister:/var/lib/postgresql/data
+  localstack:
+    image: localstack/localstack:latest
+    environment:
+      - SERVICES=sqs
+      - AWS_DEFAULT_REGION=sa-east-1
+      - EDGE_PORT=4566
+      - AWS_ACCESS_KEY_ID=xyz
+      - AWS_SECRET_ACCESS_KEY=aaa
+    ports:
+      - '4566:4566'
+    volumes:
+      # creates queues on container startup using .sh inside the folder queues-scripts
+      - ./queues-scripts:/docker-entrypoint-initaws.d
+      - /var/run/docker.sock:/var/run/docker.sock
