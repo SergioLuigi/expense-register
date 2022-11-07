@@ -17,13 +17,13 @@ class SqsMessageNewBillReceiver(
     private val logger = KotlinLogging.logger {  }
 
     @SqsListener(*[EXPENSE_REGISTER_NEW_BILL], deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
-    override fun execute(obj: BillDTO) =
-        try{
+    override fun execute(obj: BillDTO) {
+        try {
             billService.saveBill(obj)
-        }catch(ex: Exception){
+        } catch (ex: Exception) {
             logger.error { ex }
         }
-
+    }
 }
 
 

@@ -16,7 +16,7 @@ class SpringFoxConfig {
     fun api(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
             .select()
-            .apis(RequestHandlerSelectors.basePackage("br.com.sergioluigi.desafioexacta.infra.controller"))
+            .apis(RequestHandlerSelectors.basePackage("br.com.sergioluigi.expenseregister.infra.controller"))
             .paths(PathSelectors.any())
             .build()
     }

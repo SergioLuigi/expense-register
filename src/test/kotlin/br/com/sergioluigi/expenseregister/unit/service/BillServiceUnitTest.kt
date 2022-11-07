@@ -43,7 +43,7 @@ internal class BillServiceUnitTest {
 
         val result = billService.saveBill(billDTO)
 
-        result.shouldBe(bill)
+        result.shouldBe(BillDTO(bill))
     }
 
 }

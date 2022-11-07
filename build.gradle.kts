@@ -21,7 +21,7 @@ extra["cloudAwsDependenciesVersion"] = "2.4.2"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.data:spring-data-envers:2.7.5")
+	implementation("org.springframework.data:spring-data-envers")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")

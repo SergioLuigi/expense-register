@@ -2,6 +2,7 @@ package br.com.sergioluigi.expenseregister.infra.sqs
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider
 import com.amazonaws.auth.BasicAWSCredentials
+import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration
 import com.amazonaws.services.sqs.AmazonSQSAsync
 import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder
 import io.awspring.cloud.messaging.core.QueueMessagingTemplate
@@ -25,6 +26,9 @@ class SqsConfig {
     @Value("\${cloud.aws.credentials.secret-key}")
     private val awsSecretKey: String? = null
 
+    @Value("\${cloud.aws.sqs.endpoint}")
+    private val awsSQSEndpoint: String? = null
+
     @Bean
     fun queueMessagingTemplate(): QueueMessagingTemplate {
         return QueueMessagingTemplate(amazonSQSAsync())
@@ -35,7 +39,7 @@ class SqsConfig {
     fun amazonSQSAsync(): AmazonSQSAsync {
         return AmazonSQSAsyncClientBuilder
             .standard()
-            .withRegion(region)
+            .withEndpointConfiguration(EndpointConfiguration(awsSQSEndpoint, region))
             .withCredentials(AWSStaticCredentialsProvider(BasicAWSCredentials(awsAccessKey, awsSecretKey)))
             .build()
     }

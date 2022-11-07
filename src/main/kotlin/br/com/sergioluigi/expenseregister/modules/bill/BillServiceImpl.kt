@@ -15,9 +15,10 @@ class BillServiceImpl(
     private val logger = KotlinLogging.logger {  }
 
     @Transactional
-    override fun saveBill(dto: BillDTO){
-        val bill = Bill(dto)
-        billRepository.save(bill)
+    override fun saveBill(dto: BillDTO): BillDTO {
+        var bill = Bill(dto)
+        bill = billRepository.save(bill)
+        return BillDTO(bill)
     }
 
 }

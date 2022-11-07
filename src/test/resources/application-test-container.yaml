@@ -29,5 +29,7 @@ cloud:
     stack:
       auto: false
     credentials:
-      access-key: adasdasdasd
-      secret-key: fgdfgdfgfdgdf
+      access-key: xxxxxx
+      secret-key: yyyyyy
+    sqs:
+      endpoint: http://localhost.localstack.cloud:4566
