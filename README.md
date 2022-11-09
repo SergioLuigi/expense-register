@@ -14,9 +14,3 @@ Tecnologias utilizadas:
 - Swagger
 - Docker
 
-Pretendo adicionar:
-- Conexão com S3
-- Resiliência com DynamoDB
- 
- entre outras coisas que pretendo testar.
-
