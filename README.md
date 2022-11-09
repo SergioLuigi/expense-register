@@ -1,7 +1,5 @@
 # expense-register
 
-### :warning::warning: **Esse é um projeto para testes.** :warning::warning:
-
 Tecnologias utilizadas:
 
 - Kotlin
